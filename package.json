@@ -1,0 +1,21 @@
+{
+  "name": "ea-price-tracker",
+  "version": "1.0.0",
+  "description": "EA Sports fiyatlarını takip eden Node.js uygulaması",
+  "main": "ea-price-tracker.js",
+  "scripts": {
+    "start": "node ea-price-tracker.js"
+  },
+  "keywords": [
+    "ea-sports",
+    "price-tracker",
+    "ea-play"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^17.2.3",
+    "undici": "^7.16.0"
+  }
+}
