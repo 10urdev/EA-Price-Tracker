@@ -1,19 +1,27 @@
 # 🌍 EA Play Küresel Fiyat Takipçisi (Global Price Tracker)
 
-Bu araç, Electronic Arts (EA) Play abonelik fiyatlarını **89 farklı ülke** mağazasını tarayarak karşılaştırır ve size en ucuz seçenekleri sunar. 
+> [!TIP]
+> **Canlı Demo:** [https://yuksuk42.github.io/EA-Price-Tracker/offline.html](https://yuksuk42.github.io/EA-Price-Tracker/offline.html) (Son tarama verileriyle)
 
-Otomatik olarak döviz kurlarını çeker, fiyatları çevirir ve Türkiye fiyatından pahalı olan seçenekleri gizleyerek size en sade ve net sonucu gösterir.
+Bu proje, **Node.js, Asenkron Mimari ve Proxy Yönetimi** konularında kendimi geliştirmek ve EA Play'in hangi ülkelerden daha ucuza alınabildiğini merak ettiğim için hazırladığım, EA Play abonelik fiyatlarını 89 farklı ülkeden (EA Play'in satıldığı neredeyse tüm bölgeler) çekip karşılaştıran bir araçtır.
 
-![Demo](https://via.placeholder.com/800x400?text=Price+Tracker+Demo+Screenshot)
-*(Örnek Çalışma Görseli)*
+Amacım, karmaşık veri çekme (scraping) işlemlerini yönetmek ve gerçek dünya senaryolarında region-lock (bölge kısıtlaması) gibi durumları aşan bir çözüm üretmekti.
 
-## ✨ Özellikler
+## 🛠️ Teknik Kazanımlar ve Özellikler
 
-*   **⚡ Hızlı Tarama:** Paralel istek mimarisiyle 89 ülkeyi saniyeler içinde tarar.
-*   **🧠 Akıllı Sıralama:** Aynı fiyata sahip ülkeleri otomatik olarak gruplandırır.
-*   **🔎 Filtreleme:** Bulunduğunuz ülkeden (Türkiye) pahalı olanları otomatik gizler.
-*   **💱 Otomatik Çeviri:** Anlık kur bilgisiyle tüm fiyatları USD ve TRY olarak gösterir.
-*   **🛡️ Proxy Desteği:** IP tabanlı fiyatlandırmayı yakalamak için IPRoyal gibi servislerle tam uyumludur.
+### Backend & Veri Yönetimi
+*   **Asenkron Mimari:** `Promise.all` yapısı ile 89 ülkeyi aynı anda, birbirini bloklamadan saniyeler içinde tarar.
+*   **Akıllı Veri İşleme:** Gelen ham JSON verisini işleyerek en ucuz fiyatları gruplandırır.
+*   **Proxy Entegrasyonu:** IP tabanlı fiyatlandırmayı doğru analiz etmek için dinamik proxy yapısı kurulmuştur.
+*   **Hata Yönetimi:** Canlı döviz kuru çekilemezse sistemin çökmemesi için otomatik fallback mekanizması devreye girer.
+
+### Frontend & Kullanıcı Deneyimi
+*   **Modern Arayüz:** Tailwind CSS kullanarak Glassmorphism efektleri ve modern tipografi ile premium bir görünüm sağladım.
+*   **Dinamik Yerelleştirme:** Frontend tarafında TR/EN dil desteği ve otomatik para birimi çevirisi (IP tabanlı) geliştirdim.
+*   **Performans Odaklı Render:** Veri akışını "live stream" mantığında DOM'a basarak akıcı bir kullanıcı deneyimi sundum.
+*   **Statik Dosya Üretimi:** Aktif bir node sunucusu olmadan da çalışabilen, verilerin içine gömülü olduğu "offline" HTML üretim mekanizması kurguladım.
+
+
 
 ## 🚀 Kurulum
 
