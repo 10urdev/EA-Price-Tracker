@@ -1,60 +1,72 @@
-# 🌍 EA Play Küresel Fiyat Takipçisi (Global Price Tracker)
+# 🌍 EA Play Global Price Tracker
 
-Bu araç, Electronic Arts (EA) Play abonelik fiyatlarını **89 farklı ülke** mağazasını tarayarak karşılaştırır ve size en ucuz seçenekleri sunar. 
+[![Turkish](https://img.shields.io/badge/lang-TR-red)](README.TR.md)
+> **🇹🇷 Türkçe Dokümantasyon:** [README.TR.md](README.TR.md) dosyasını inceleyebilirsiniz.
 
-Otomatik olarak döviz kurlarını çeker, fiyatları çevirir ve Türkiye fiyatından pahalı olan seçenekleri gizleyerek size en sade ve net sonucu gösterir.
+> [!TIP]
+> **Live Demo:** [https://yuksuk42.github.io/EA-Price-Tracker/offline.html](https://yuksuk42.github.io/EA-Price-Tracker/offline.html) (Using latest scan data)
 
-## ✨ Özellikler
+This project is a personal development tool I created to improve my skills in **Node.js, Asynchronous Architecture, and Proxy Management**, driven by my curiosity to find out which countries offer EA Play subscriptions at a lower price. It fetches and compares subscription prices from 89 different countries (covering almost all regions where EA Play is sold).
 
-*   **⚡ Hızlı Tarama:** Paralel istek mimarisiyle 89 ülkeyi saniyeler içinde tarar.
-*   **🧠 Akıllı Sıralama:** Aynı fiyata sahip ülkeleri otomatik olarak gruplandırır.
-*   **🔎 Filtreleme:** Bulunduğunuz ülkeden (Türkiye) pahalı olanları otomatik gizler.
-*   **💱 Otomatik Çeviri:** Anlık kur bilgisiyle tüm fiyatları USD ve TRY olarak gösterir.
-*   **🛡️ Proxy Desteği:** IP tabanlı fiyatlandırmayı yakalamak için IPRoyal gibi servislerle tam uyumludur.
+My goal was to manage complex web scraping operations and create a solution that bypasses real-world scenarios like region-locks.
 
-## 🚀 Kurulum
+## 🛠️ Technical Achievements & Features
 
-1.  **Projeyi İndirin:**
-    Bu repoyu bilgisayarınıza klonlayın veya zip olarak indirin.
+### Backend & Data Management
+*   **Asynchronous Architecture:** Uses `Promise.all` to scan 89 countries simultaneously within seconds without blocking operations.
+*   **Smart Data Processing:** Processes raw JSON data to group the cheapest pricing options.
+*   **Proxy Integration:** Implements a dynamic proxy structure to accurately analyze IP-based pricing.
+*   **Error Management:** Features an automatic fallback mechanism to prevent system failure if live exchange rates cannot be fetched.
 
-2.  **Gerekli Paketleri Yükleyin:**
+### Frontend & User Experience
+*   **Modern Interface:** Designed a premium look using Tailwind CSS with Glassmorphism effects and modern typography.
+*   **Dynamic Localization:** Developed frontend support for TR/EN languages and automatic currency conversion based on IP.
+*   **Performance-Oriented Rendering:** Delivers a fluid user experience by rendering data streams directly to the DOM (flicker-free).
+*   **Static File Generation:** Designed an "offline" HTML generation mechanism where data is embedded, allowing the report to be viewed without an active Node server.
+
+## 🚀 Installation
+
+1.  **Clone the Project:**
+    Clone this repository to your computer or download it as a ZIP file.
+
+2.  **Install Dependencies:**
     ```bash
     npm install
     ```
 
-3.  **Yapılandırma (.env):**
-    Proje ana dizininde `.env` adında bir dosya oluşturun ve proxy servisinizin (Örn: IPRoyal) bilgilerini aşağıdaki formatta ekleyin:
+3.  **Configuration (.env):**
+    Create a file named `.env` in the project root directory and add your proxy service details (e.g., IPRoyal) in the following format:
     ```env
-    EARTH_PROXY_URL=http://kullanici:sifre_country-COUNTRY_CODE@proxy.adresi:port
+    EARTH_PROXY_URL=http://user:password_country-COUNTRY_CODE@proxy.address:port
     ```
-    *Not: `COUNTRY_CODE` kısmı kod tarafından otomatik değiştirilecektir, o kısmı aynen bırakın.*
+    *Note: Leave `COUNTRY_CODE` as is; the code will automatically replace it.*
 
-## 🎮 Kullanım
+## 🎮 Usage
 
-**Standart (Önerilen) Mod:**
-Bu modda sadece en iyi 5 fiyat grubu listelenir ve pahalı ülkeler gizlenir.
+**Standard (Recommended) Mode:**
+Displays only the top 5 cheapest price groups and hides expensive countries.
 ```bash
 node ea-price-tracker.js
 ```
 
-**Tam Liste Modu:**
-Tüm 89 ülkenin fiyatlarını görmek isterseniz:
+**Full List Mode:**
+To view prices for all 89 countries:
 ```bash
 node ea-price-tracker.js --full
 ```
 
-## 📋 Örnek Çıktı
+## 📋 Example Output
 
 ```text
-📊 PRO - YILLIK FİYATLAR (Baz Ülke: Türkiye - $120.00)
+📊 PRO - YEARLY PRICES (Base Country: Turkey - $120.00)
 ════════════════════════════════════════════════════════════
-🥇 Fiyat: $39.81 (₺1713.49)
-   Ülkeler: Mısır
+🥇 Price: $39.81 (₺1713.49)
+   Countries: Egypt
 
-🥈 Fiyat: $65.45 (₺2817.06)
-   Ülkeler: Ukrayna
+🥈 Price: $65.45 (₺2817.06)
+   Countries: Ukraine
 ...
 ```
 
-## ⚠️ Yasal Uyarı
-Bu proje sadece eğitim ve piyasa analizi amaçlıdır. Bölgesel fiyatlandırma politikaları ve hesap kuralları hakkında sorumluluk kullanıcıya aittir.
+## ⚠️ Legal Disclaimer
+This project is for educational and market analysis purposes only. Responsibility regarding regional pricing policies and account rules belongs solely to the user.
