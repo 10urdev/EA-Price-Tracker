@@ -4,7 +4,7 @@
 > **🇹🇷 Türkçe Dokümantasyon:** [README.TR.md](README.TR.md) dosyasını inceleyebilirsiniz.
 
 > [!TIP]
-> **Live Demo:** [https://yuksuk42.github.io/EA-Price-Tracker/offline.html](https://yuksuk42.github.io/EA-Price-Tracker/offline.html) (Using latest scan data)
+> **Live Demo:** [10urdev.github.io/EA-Price-Tracker/](10urdev.github.io/EA-Price-Tracker/) (Using latest scan data)
 
 This project is a personal development tool I created to improve my skills in **Node.js, Asynchronous Architecture, and Proxy Management**, driven by my curiosity to find out which countries offer EA Play subscriptions at a lower price. It fetches and compares subscription prices from 89 different countries (covering almost all regions where EA Play is sold).
 
